@@ -5,7 +5,7 @@ An industrial-grade, zero-trust Edge-ML prototype implemented on an ESP32 microc
 ## 🛠️ Project File Structure
 
 ```plaintext
-├── main.c (or sketch.ino)   # Core firmware: TinyML engine, rail validation, & tamper logic
+├── main.c                   # Core firmware: TinyML engine, rail validation, & tamper logic
 ├── diagram.json             # Wokwi simulation circuit configuration & netlist
 ├── eml_out1.jpg             # Simulation log verification (Normal vs. Rail Spoofing)
 └── eml_out2.jpg             # Wokwi circuit layout and live security trigger output
@@ -38,6 +38,8 @@ The system was simulated and fully verified using Wokwi. Below are the captured 
 ### 1. Circuit Layout & Verification (`diagram.json` & `eml_out2.jpg`)
 The hardware schematic consists of an ESP32-DevKitC V4, a potentiometer simulating a continuous industrial sensor stream on GPIO 34, and a push-button with a pull-down resistor simulating a physical enclosure tamper switch on GPIO 12.
 
+![Wokwi Circuit Layout and Security Trigger](eml_out2.jpg)
+
 ### 2. Execution Logs & Threat Interception (`eml_out1.jpg`)
 The serial monitor output demonstrates simultaneous normal operation and real-time threat mitigation:
 * **Normal Inference:** When the potentiometer operates within safe limits, inferences execute in 118 µs with normal status tracking.
@@ -47,6 +49,7 @@ The serial monitor output demonstrates simultaneous normal operation and real-ti
 [SECURITY ALERT] Sensor spoofing / rail saturation detected! ADC Value: 0
 [ACTION] Bypassing TinyML inference due to untrusted sensor stream.
 ```
+![Simulation Log Verification](eml_out1.jpg)
 
 ## 🚀 How to Run in Wokwi
 
