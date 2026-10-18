@@ -57,3 +57,25 @@ The serial monitor output demonstrates simultaneous normal operation and real-ti
 2. Replace the project's sketch code with the contents of `main.c` / `sketch.ino`.
 3. Replace the `diagram.json` file content with the provided `diagram.json` configuration to render the ESP32, potentiometer, push-button, and pull-down resistor.
 4. Hit **Start Simulation** and check the Serial Monitor to observe live inference metrics and test sensor spoofing by dragging the potentiometer to its absolute minimum/maximum bounds.
+
+## Technical Report
+
+The project has been published as a technical report / preprint on Zenodo, to which the link is provided below:
+https://doi.org/10.5281/zenodo.23457961
+
+## Citation
+
+For now, cite the Zenodo preprint and software record:
+
+```bibtex
+@misc{swornampillai2026secureedgeml,
+      title={Secure Edge-ML: A Tamper-Resistant and Spoof-Resilient TinyML Architecture for Resource-Constrained IoT Devices}, 
+      author={Vasudevan Swornampillai},
+      year={2026},
+      month={October},
+      publisher={Zenodo},
+      doi={10.5281/zenodo.23457961},
+      url={https://doi.org/10.5281/zenodo.23457961}
+}
+```
+
