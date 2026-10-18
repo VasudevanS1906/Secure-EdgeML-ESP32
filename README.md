@@ -35,12 +35,12 @@ To prove compliance with industrial security frameworks (such as IEC 62443 and a
 
 The system was simulated and fully verified using Wokwi. Below are the captured verification logs and circuit diagrams:
 
-### 1. Circuit Layout & Verification (`diagram.json` & `eml_out2.jpg`)
+### 1. Circuit Layout & Verification (`diagram.json` & `eml_out2.png`)
 The hardware schematic consists of an ESP32-DevKitC V4, a potentiometer simulating a continuous industrial sensor stream on GPIO 34, and a push-button with a pull-down resistor simulating a physical enclosure tamper switch on GPIO 12.
 
-![Wokwi Circuit Layout and Security Trigger](eml_out2.jpg)
+![Wokwi Circuit Layout and Security Trigger](eml_out2.png)
 
-### 2. Execution Logs & Threat Interception (`eml_out1.jpg`)
+### 2. Execution Logs & Threat Interception (`eml_out1.png`)
 The serial monitor output demonstrates simultaneous normal operation and real-time threat mitigation:
 * **Normal Inference:** When the potentiometer operates within safe limits, inferences execute in 118 µs with normal status tracking.
 * **Security Interception:** When sensor values hit rail extremes (0 or 4095), the system instantly halts untrusted data propagation:
@@ -49,7 +49,7 @@ The serial monitor output demonstrates simultaneous normal operation and real-ti
 [SECURITY ALERT] Sensor spoofing / rail saturation detected! ADC Value: 0
 [ACTION] Bypassing TinyML inference due to untrusted sensor stream.
 ```
-![Simulation Log Verification](eml_out1.jpg)
+![Simulation Log Verification](eml_out1.png)
 
 ## 🚀 How to Run in Wokwi
 
