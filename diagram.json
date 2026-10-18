@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Vasudevan Swornampillai",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 0, "left": -100, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 120, "left": -100, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 180, "left": -20, "attrs": { "value": "10000" } }
+  ],
+  "connections": [
+    [ "pot1:SIG", "esp:34", "blue", [] ],
+    [ "pot1:VCC", "esp:3V3", "red", [] ],
+    [ "pot1:GND", "esp:GND.1", "black", [] ],
+    [ "btn1:1.l", "esp:3V3", "red", [] ],
+    [ "btn1:2.l", "esp:12", "green", [] ],
+    [ "r1:1", "esp:GND.2", "black", [] ],
+    [ "r1:2", "btn1:2.l", "green", [] ]
+  ]
+}
